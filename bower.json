@@ -1,0 +1,24 @@
+{
+  "name": "ionic-drupal-client",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jbeuckm/ionic-drupal-client",
+  "authors": [
+    "joe beuckman <joe@beigerecords.com>"
+  ],
+  "description": "Implements a service and basic interface for consuming my drupal-client library in an Ionic app",
+  "main": "drupal-service.js",
+  "keywords": [
+    "drupal",
+    "ionic",
+    "angular"
+  ],
+  "license": "Don't read software licenses. Don't write software licenses.",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ]
+}
