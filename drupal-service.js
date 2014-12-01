@@ -36,6 +36,7 @@ angular.module('drupal', ['ionic'])
                 def.resolve(user);
 
                 $rootScope.$broadcast('drupal_login', user);
+                $rootScope.$broadcast('drupal_account', user);
             },
             def.reject
         );
@@ -71,6 +72,7 @@ angular.module('drupal', ['ionic'])
 
                 }
                 def.resolve(user);
+                $rootScope.$broadcast('drupal_account', user);
             },
             function (err) {
                 console.log("ERROR connecting to drupal");
