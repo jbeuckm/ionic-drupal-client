@@ -112,10 +112,10 @@ angular.module('drupal', ['ionic'])
             password2: ''
         };
 
-            myPopup = $ionicPopup.show({
+        myPopup = $ionicPopup.show({
             templateUrl: 'lib/ionic-drupal-client/templates/sign_up.html',
             title: 'Sign Up',
-            subTitle: 'Enter your username and password.',
+            subTitle: 'Provide credentials for your new account.',
             scope: $scope,
             buttons: [
                 {
@@ -155,7 +155,6 @@ angular.module('drupal', ['ionic'])
         var myPopup;
 
         $scope.createNewAccount = function () {
-            myPopup.close();
             registerForm();
         };
 
