@@ -29,9 +29,9 @@ angular.module('drupal', ['ionic'])
         var def = $q.defer();
 
         drupal.login(username, password,
-            function (_user) {
+            function (response) {
 
-                user = _user;
+                user = response;
 
                 def.resolve(user);
 
@@ -50,6 +50,7 @@ angular.module('drupal', ['ionic'])
             function (arg) {
                 user = null;
                 def.resolve(arg);
+                $rootScope.$broadcast('drupal_logout');
             },
             function (err) {
                 def.reject(err);
@@ -68,6 +69,7 @@ angular.module('drupal', ['ionic'])
             function (result) {
                 console.log("drupal:systemconnect succeeded");
                 user = result.user;
+
                 if (user.uid != 0) {
 
                 }
@@ -112,10 +114,10 @@ angular.module('drupal', ['ionic'])
             password2: ''
         };
 
-        myPopup = $ionicPopup.show({
+            myPopup = $ionicPopup.show({
             templateUrl: 'lib/ionic-drupal-client/templates/sign_up.html',
             title: 'Sign Up',
-            subTitle: 'Provide credentials for your new account.',
+            subTitle: 'Enter your username and password.',
             scope: $scope,
             buttons: [
                 {
@@ -155,6 +157,7 @@ angular.module('drupal', ['ionic'])
         var myPopup;
 
         $scope.createNewAccount = function () {
+            myPopup.close();
             registerForm();
         };
 
